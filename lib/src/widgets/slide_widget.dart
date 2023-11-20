@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 
 class SlideWidget extends StatelessWidget {
   const SlideWidget({
-    super.key,
+    Key? key,
     required this.index,
     required this.actualIndex,
     required this.sliderDuration,
@@ -17,7 +17,7 @@ class SlideWidget extends StatelessWidget {
     required this.currentItemShadow,
     required this.sideItemsShadow,
     required this.onSlideClick,
-  });
+  }) : super(key: key);
 
   final Function onSlideClick;
 
@@ -72,9 +72,10 @@ class SlideWidget extends StatelessWidget {
   List<BoxShadow>? _getSlideBoxShadow(index, actualIndex) =>
       (index == actualIndex) ? currentItemShadow : sideItemsShadow;
 
-  double _getSlideTurn(int currentIndex, actualCurrentIndex) => (currentIndex < actualCurrentIndex)
-      ? -pi / turns
-      : (currentIndex > actualCurrentIndex)
-          ? pi / turns
-          : 0;
+  double _getSlideTurn(int currentIndex, actualCurrentIndex) =>
+      (currentIndex < actualCurrentIndex)
+          ? -pi / turns
+          : (currentIndex > actualCurrentIndex)
+              ? pi / turns
+              : 0;
 }

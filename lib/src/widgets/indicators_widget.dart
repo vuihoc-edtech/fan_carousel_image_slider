@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 
 class IndicatorsWidget extends StatelessWidget {
   const IndicatorsWidget({
-    super.key,
+    Key? key,
     required this.indicatorActiveColor,
     required this.indicatorDeactiveColor,
     required this.sliderDuration,
     required this.imagesLink,
     required this.actualIndex,
-  });
+  }) : super(key: key);
 
   final int actualIndex;
   final Duration sliderDuration;
@@ -29,7 +29,9 @@ class IndicatorsWidget extends StatelessWidget {
             curve: Curves.bounceInOut,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: (entire.key != actualIndex) ? Colors.transparent : indicatorActiveColor,
+              color: (entire.key != actualIndex)
+                  ? Colors.transparent
+                  : indicatorActiveColor,
               border: (entire.key != actualIndex)
                   ? Border.all(color: indicatorDeactiveColor, width: 1)
                   : null,

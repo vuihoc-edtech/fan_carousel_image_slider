@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ArrawNavs extends StatelessWidget {
-  const ArrawNavs({super.key, required this.goNextPage, required this.goPrevPage});
+  const ArrawNavs(
+      {Key? key, required this.goNextPage, required this.goPrevPage})
+      : super(key: key);
 
   final Function goNextPage;
   final Function goPrevPage;

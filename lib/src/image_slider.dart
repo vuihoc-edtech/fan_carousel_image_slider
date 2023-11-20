@@ -8,7 +8,6 @@ import 'widgets/slide_widget.dart';
 
 class FanCarouselImageSlider extends StatefulWidget {
   const FanCarouselImageSlider({
-    super.key,
     required this.imagesLink,
     required this.isAssets,
     this.showIndicator = true,
@@ -322,7 +321,7 @@ class _FanCarouselImageSliderState extends State<FanCarouselImageSlider> {
                     indicatorDeactiveColor: widget.indicatorDeactiveColor,
                     sliderDuration: widget.sliderDuration,
                     imagesLink: widget.imagesLink,
-                    actualIndex: value,
+                    actualIndex: (value is int) ? value : 0,
                   ),
                 ),
               ),
